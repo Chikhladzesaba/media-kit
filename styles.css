@@ -1,0 +1,126 @@
+/* Brand colors, used everywhere below */
+:root {
+  --accent: #006aff;
+  --ink: #1a1b22;
+  --border: #c5dcf0;
+  --bg: #f7fbff;
+  --muted: #5b6070;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: #e9f1fa;
+  color: var(--ink);
+  font-family: "Inter Tight", sans-serif;
+}
+
+/* The A4 page: 210mm x 297mm */
+.kit {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 14mm;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(26, 27, 34, 0.08);
+}
+
+h1, h2 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  margin: 0;
+}
+h1 { font-size: 40px; line-height: 1.1; }
+h2 { font-size: 24px; margin-bottom: 12px; }
+h3 { font-size: 12px; margin: 0 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+section { margin-top: 28px; }
+
+/* Header */
+.kit-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--accent);
+}
+.photo, .logo, .mini-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.photo { width: 96px; height: 96px; border-radius: 50%; }
+.logo { width: 72px; height: 72px; border-radius: 12px; margin-left: auto; }
+.eyebrow { margin: 0 0 4px; color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.tagline { margin: 8px 0 6px; font-size: 15px; }
+.handles { margin: 0; font-size: 12px; color: var(--muted); }
+
+/* Audience numbers */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stat {
+  padding: 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.stat b { display: block; font-size: 24px; color: var(--accent); }
+.stat span { font-size: 12px; color: var(--muted); }
+
+/* Three equal columns, used by several sections */
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+/* Age bars */
+.bar { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12px; }
+.bar span { width: 40px; color: var(--muted); }
+.bar i { display: block; height: 8px; background: var(--accent); border-radius: 4px; }
+
+/* Countries */
+.countries { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.8; }
+.countries b { float: right; }
+
+/* Gender split */
+.split { height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
+.split i { display: block; height: 100%; background: var(--accent); }
+.split-label { display: flex; justify-content: space-between; margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+
+/* Cards: brands and packages */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px;
+}
+.card span { color: var(--muted); }
+.mini-logo { width: 40px; height: 40px; border-radius: 8px; }
+.package { background: var(--bg); }
+.price { margin: 0; font-size: 22px; font-weight: 700; color: var(--accent); }
+
+/* Footer */
+.kit-foot {
+  margin-top: 32px;
+  padding: 20px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 12px;
+}
+.kit-foot p { margin: 6px 0 0; font-size: 14px; }
+.kit-foot .updated { font-size: 11px; opacity: 0.6; }
+
+/* Phones: stack the columns */
+@media (max-width: 640px) {
+  .kit { padding: 20px; min-height: 0; }
+  .kit-head { flex-wrap: wrap; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .three { grid-template-columns: 1fr; }
+}
