@@ -97,3 +97,7 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 #reset:hover { border-color: #d33; color: #d33; }
 .actions { display: flex; gap: 8px; margin-left: auto; }
 .actions button { margin: 0; }
+/* × on each brand card (kit) */
+.card { position: relative; }
+.card-remove { position: absolute; top: 4px; right: 4px; width: 18px; height: 18px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--muted); font-size: 14px; line-height: 18px; cursor: pointer; }
+.card-remove:hover { color: #d33; }
