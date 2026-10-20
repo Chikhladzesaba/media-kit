@@ -45,3 +45,15 @@ function update() {
 
 // Run update every time anything in the form changes
 form.addEventListener('input', update);
+
+// Platform boxes: empty on click so the full suggestion list shows; put the old value back if nothing was chosen
+form.querySelectorAll('input[list]').forEach(input => {
+  input.addEventListener('focus', () => {
+    input.dataset.old = input.value;
+    input.placeholder = input.value || input.placeholder;
+    input.value = '';
+  });
+  input.addEventListener('blur', () => {
+    if (input.value.trim() === '') input.value = input.dataset.old;
+  });
+});
