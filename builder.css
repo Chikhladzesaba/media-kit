@@ -67,3 +67,16 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
   .app { grid-template-columns: 1fr; }
   .form { position: static; max-height: none; }
 }
+/* Phones and tablets: stack form above the kit and shrink the kit */
+@media screen and (max-width: 860px) {
+  .app { display: block; }
+  .form { position: static; max-height: none; overflow: visible; margin-bottom: 24px; }
+  .kit { zoom: 0.8; margin-left: auto; margin-right: auto; }
+}
+@media screen and (max-width: 680px) {
+  .kit { zoom: 0.55; }
+}
+@media screen and (max-width: 480px) {
+  .kit { zoom: 0.4; }
+  .topbar { flex-wrap: wrap; gap: 8px; }
+}
