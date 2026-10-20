@@ -127,6 +127,7 @@ section { margin-top: 28px; }
 /* Brands: 0 to 6 cards in one row */
 .brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .brands.many { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+[data-brand][hidden] { display: none; }
 .brands.many .card { padding: 10px; }
 .brands.many b { font-size: 12px; }
 .brands.many span { font-size: 11px; }
