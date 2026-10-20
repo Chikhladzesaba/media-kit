@@ -41,6 +41,16 @@ function update() {
   const handlesLine = document.querySelector('#handles');
   handlesLine.dataset.sample ??= handlesLine.textContent;
   handlesLine.textContent = handles.length > 0 ? handles.join(' · ') : handlesLine.dataset.sample;
+  
+  // 4. Contact line: only the email/phone that are filled in. Hide "Numbers updated" when empty.
+  const contact = document.querySelector('#contact');
+  if (contact) {
+    contact.textContent = [form.elements.email.value.trim(), form.elements.phone.value.trim()]
+      .filter(v => v !== '')
+      .join(' · ');
+    contact.hidden = contact.textContent === '';
+  }
+  document.querySelector('.updated').hidden = form.elements.updated.value.trim() === '';
 }
 
 // Run update every time anything in the form changes
