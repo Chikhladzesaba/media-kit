@@ -124,9 +124,9 @@ section { margin-top: 28px; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .three { grid-template-columns: 1fr; }
 }
-/* Brands: 3 to 6 cards in one row */
-.brands { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 12px; }
-[data-brand][hidden] { display: none; }
+/* Brands: 0 to 6 cards in one row */
+.brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.brands.many { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
 .brands.many .card { padding: 10px; }
 .brands.many b { font-size: 12px; }
 .brands.many span { font-size: 11px; }
