@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- back paper -->
+  <rect x="30" y="10" width="24" height="30" rx="3" fill="#f7fbff" stroke="#006aff" stroke-width="3"/>
+  <path d="M36 18h12M36 24h12" stroke="#ff8a8a" stroke-width="3" stroke-linecap="round"/>
+  <!-- front paper -->
+  <rect x="12" y="5" width="26" height="34" rx="3" fill="#f7fbff" stroke="#006aff" stroke-width="3"/>
+  <path d="M18 13h14M18 19h14M18 25h14" stroke="#3fd0c9" stroke-width="3" stroke-linecap="round"/>
+  <!-- folder -->
+  <path d="M8 27h14a3 3 0 0 1 2.4 1.2L28 33h28a4 4 0 0 1 4 4v19a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V31a4 4 0 0 1 4-4z" fill="#006aff"/>
+</svg>
