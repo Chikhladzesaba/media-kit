@@ -28,9 +28,21 @@
         <summary>1. Profile</summary>
         <label>Channel name<input name="name" placeholder="Your Channel Name"></label>
         <label>One-sentence description<input name="tagline" placeholder="What your channel is about"></label>
-        <label>YouTube handle<input name="youtube" placeholder="@yourchannel"></label>
-        <label>Instagram handle<input name="instagram" placeholder="@yourchannel"></label>
-        <label>TikTok handle<input name="tiktok" placeholder="@yourchannel"></label>
+               <div class="row">
+          <label>Platform<input name="plat1" list="platforms" value="YouTube"></label>
+          <label>Handle<input name="handle1" placeholder="@yourchannel"></label>
+          <label>Platform<input name="plat2" list="platforms" value="Instagram"></label>
+          <label>Handle<input name="handle2" placeholder="@yourchannel"></label>
+          <label>Platform<input name="plat3" list="platforms" value="TikTok"></label>
+          <label>Handle<input name="handle3" placeholder="@yourchannel"></label>
+          <label>Platform<input name="plat4" list="platforms" placeholder="e.g. Facebook"></label>
+          <label>Handle<input name="handle4" placeholder="@yourchannel"></label>
+        </div>
+        <datalist id="platforms">
+          <option value="YouTube"><option value="Instagram"><option value="TikTok">
+          <option value="Facebook"><option value="Snapchat"><option value="Twitch">
+          <option value="X"><option value="LinkedIn"><option value="Threads">
+        </datalist>
         <label>Contact email<input name="email" type="email" placeholder="you@example.com"></label>
         <label>Phone<input name="phone" placeholder="+995 ..."></label>
         <label>Numbers updated (month)<input name="updated" placeholder="October 2026"></label>
