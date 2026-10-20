@@ -19,13 +19,13 @@ function shrinkImage(file, type, done) {
   reader.readAsDataURL(file);
 }
 
-function showImage(box, dataUrl, placeholder) {
+function showImage(box, dataUrl, placeholder, fit) {
   box.textContent = '';
   if (!dataUrl) { box.textContent = placeholder; return; }
   const img = document.createElement('img');
   img.src = dataUrl;
   img.alt = '';
-  img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block';
+  img.style.cssText = 'width:100%;height:100%;border-radius:inherit;display:block;object-fit:' + (fit || 'cover');
   box.appendChild(img);
 }
 
@@ -33,7 +33,7 @@ function setupImage(o) {
   const input = document.getElementById(o.input);
   const remove = document.getElementById(o.remove);
   const box = document.querySelector(o.box);
-  showImage(box, localStorage.getItem(o.key), o.placeholder);
+  showImage(box, localStorage.getItem(o.key), o.placeholder, o.fit);
 
   input.addEventListener('change', () => {
     const file = input.files[0];
@@ -47,13 +47,13 @@ function setupImage(o) {
         alert('Not enough browser storage to save this image. Try a smaller one.');
         return;
       }
-      showImage(box, dataUrl, o.placeholder);
+      showImage(box, dataUrl, o.placeholder, o.fit);
     });
   });
 
   remove.addEventListener('click', () => {
     localStorage.removeItem(o.key);
-    showImage(box, null, o.placeholder);
+    showImage(box, null, o.placeholder, o.fit);
   });
 }
 
@@ -64,4 +64,14 @@ setupImage({
   key: 'mediakit:photo',
   type: 'image/jpeg',
   placeholder: 'Photo'
+});
+
+setupImage({
+  input: 'logo-input',
+  remove: 'logo-remove',
+  box: '.logo',
+  key: 'mediakit:logo',
+  type: 'image/png',
+  fit: 'contain',
+  placeholder: 'Logo'
 });
