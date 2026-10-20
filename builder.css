@@ -92,3 +92,5 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
   background: var(--ink); color: #fff;
   font-size: 12px; line-height: 16px; cursor: pointer;
 }
+#reset { background: none; border: 1px solid var(--border); color: var(--ink); padding: 8px 14px; border-radius: 8px; font: inherit; cursor: pointer; margin-right: 8px; }
+#reset:hover { border-color: #d33; color: #d33; }
