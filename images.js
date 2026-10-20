@@ -1,4 +1,4 @@
-// images.js — upload, shrink and save images (step 5)
+// images.js — upload, shrink and save images (step 5) 
 const MAX_SIZE = 400; // longest side in pixels
 
 function shrinkImage(file, type, done) {
@@ -65,6 +65,6 @@ setupImage({
   box: '.photo',
   key: 'mediakit:photo',
   type: 'image/png',
-  fit: 'contain',
+  fit: 'cover',
   placeholder: 'Photo'
 });
