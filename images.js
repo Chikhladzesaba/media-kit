@@ -1,5 +1,6 @@
-// images.js — upload, shrink and save images (step 5) 
+// images.js — click an image box in the kit to upload, shrink and save
 const MAX_SIZE = 400; // longest side in pixels
+const UPLOAD_ICON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M7 9l5-5 5 5M5 15v4h14v-4"/></svg>';
 
 function shrinkImage(file, type, done) {
   const reader = new FileReader();
@@ -19,23 +20,41 @@ function shrinkImage(file, type, done) {
   reader.readAsDataURL(file);
 }
 
-function showImage(box, dataUrl, placeholder, fit) {
-  box.textContent = '';
-  box.style.background = dataUrl ? '#fff' : '';
-  box.style.border = dataUrl ? '1px solid var(--border)' : '';
-  if (!dataUrl) { box.textContent = placeholder; return; }
+function showImage(box, dataUrl, fit) {
+  box.innerHTML = '';
+  box.classList.toggle('has-image', !!dataUrl);
+  if (!dataUrl) { box.innerHTML = UPLOAD_ICON; return; }
   const img = document.createElement('img');
   img.src = dataUrl;
   img.alt = '';
-  img.style.cssText = 'width:100%;height:100%;border-radius:inherit;display:block;object-fit:' + (fit || 'cover');
-  box.appendChild(img);
+  img.style.objectFit = fit;
+  const x = document.createElement('button');
+  x.type = 'button';
+  x.className = 'img-remove';
+  x.textContent = '×';
+  x.title = 'Remove image';
+  box.append(img, x);
 }
 
 function setupImage(o) {
-  const input = document.getElementById(o.input);
-  const remove = document.getElementById(o.remove);
-  const box = document.querySelector(o.box);
-  showImage(box, localStorage.getItem(o.key), o.placeholder, o.fit);
+  const box = document.querySelectorAll(o.box)[o.index || 0];
+  if (!box) return;
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.hidden = true;
+  document.body.appendChild(input);
+  box.title = 'Click to upload ' + o.label;
+  showImage(box, localStorage.getItem(o.key), o.fit);
+
+  box.addEventListener('click', (e) => {
+    if (e.target.closest('.img-remove')) {
+      localStorage.removeItem(o.key);
+      showImage(box, null, o.fit);
+      return;
+    }
+    input.click();
+  });
 
   input.addEventListener('change', () => {
     const file = input.files[0];
@@ -49,22 +68,14 @@ function setupImage(o) {
         alert('Not enough browser storage to save this image. Try a smaller one.');
         return;
       }
-      showImage(box, dataUrl, o.placeholder, o.fit);
+      showImage(box, dataUrl, o.fit);
     });
-  });
-
-  remove.addEventListener('click', () => {
-    localStorage.removeItem(o.key);
-    showImage(box, null, o.placeholder, o.fit);
   });
 }
 
-setupImage({
-  input: 'photo-input',
-  remove: 'photo-remove',
-  box: '.photo',
-  key: 'mediakit:photo',
-  type: 'image/png',
-  fit: 'cover',
-  placeholder: 'Photo'
-});
+setupImage({ box: '.photo', key: 'mediakit:photo', type: 'image/png', fit: 'cover', label: 'a photo or logo' });
+
+// Brand logos: the same setup for each of the 3 boxes (i = 0, 1, 2)
+for (let i = 0; i < 3; i++) {
+  setupImage({ box: '.mini-logo', index: i, key: 'mediakit:brand' + (i + 1), type: 'image/png', fit: 'contain', label: 'a brand logo' });
+}
