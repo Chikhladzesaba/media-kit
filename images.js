@@ -21,6 +21,8 @@ function shrinkImage(file, type, done) {
 
 function showImage(box, dataUrl, placeholder, fit) {
   box.textContent = '';
+  box.style.background = dataUrl ? '#fff' : '';
+  box.style.border = dataUrl ? '1px solid var(--border)' : '';
   if (!dataUrl) { box.textContent = placeholder; return; }
   const img = document.createElement('img');
   img.src = dataUrl;
