@@ -30,14 +30,13 @@ function update() {
   const women = form.elements.women.value;
   document.querySelector('#men').textContent = women === '' ? '00' : 100 - Number(women);
 
-  // 3. Handles line: only the platforms that are filled in
-  const handles = [
-    ['YouTube', form.elements.youtube.value.trim()],
-    ['Instagram', form.elements.instagram.value.trim()],
-    ['TikTok', form.elements.tiktok.value.trim()],
-  ]
-    .filter(([, handle]) => handle !== '')
-    .map(([platform, handle]) => `${platform} ${handle}`);
+  // 3. Handles line: up to 4 rows of Platform + Handle, empty rows skipped
+  const handles = [];
+  for (let i = 1; i <= 4; i++) {
+    const platform = form.elements['plat' + i]?.value.trim() || '';
+    const handle = form.elements['handle' + i]?.value.trim() || '';
+    if (handle !== '') handles.push((platform + ' ' + handle).trim());
+  }
 
   const handlesLine = document.querySelector('#handles');
   handlesLine.dataset.sample ??= handlesLine.textContent;
