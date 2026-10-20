@@ -62,16 +62,7 @@ setupImage({
   remove: 'photo-remove',
   box: '.photo',
   key: 'mediakit:photo',
-  type: 'image/jpeg',
-  placeholder: 'Photo'
-});
-
-setupImage({
-  input: 'logo-input',
-  remove: 'logo-remove',
-  box: '.logo',
-  key: 'mediakit:logo',
   type: 'image/png',
   fit: 'contain',
-  placeholder: 'Logo'
+  placeholder: 'Photo'
 });
