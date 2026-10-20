@@ -42,15 +42,15 @@ function update() {
   handlesLine.dataset.sample ??= handlesLine.textContent;
   handlesLine.textContent = handles.length > 0 ? handles.join(' · ') : handlesLine.dataset.sample;
   
-  // 4. Contact line: only the email/phone that are filled in. Hide "Numbers updated" when empty.
+  // 4. Contact + "Numbers updated": when empty, show faded sample text (hidden in the PDF)
   const contact = document.querySelector('#contact');
   if (contact) {
-    contact.textContent = [form.elements.email.value.trim(), form.elements.phone.value.trim()]
-      .filter(v => v !== '')
-      .join(' · ');
-    contact.hidden = contact.textContent === '';
+    const parts = [form.elements.email.value.trim(), form.elements.phone.value.trim()].filter(v => v !== '');
+    contact.textContent = parts.length > 0 ? parts.join(' · ') : 'you@example.com · +000 000 000 000';
+    contact.classList.toggle('is-sample', parts.length === 0);
   }
-  document.querySelector('.updated').hidden = form.elements.updated.value.trim() === '';
+  const updatedEmpty = form.elements.updated.value.trim() === '';
+  document.querySelector('.updated').classList.toggle('is-sample', updatedEmpty);
 }
 
 // Run update every time anything in the form changes
