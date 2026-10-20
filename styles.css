@@ -131,3 +131,7 @@ section { margin-top: 28px; }
 .brands.many .card { padding: 10px; }
 .brands.many b { font-size: 12px; }
 .brands.many span { font-size: 11px; }
+.kit {
+  --border: color-mix(in srgb, var(--accent) 22%, white);
+  --bg: color-mix(in srgb, var(--accent) 3%, white);
+}
