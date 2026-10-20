@@ -80,3 +80,15 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
   .kit { zoom: 0.4; }
   .topbar { flex-wrap: wrap; gap: 8px; }
 }
+/* Image boxes in the kit: click to upload */
+.photo, .mini-logo { position: relative; cursor: pointer; }
+.photo:hover, .mini-logo:hover { border-color: var(--accent); color: var(--accent); }
+.photo.has-image, .mini-logo.has-image { background: #fff; border-style: solid; }
+.has-image img { width: 100%; height: 100%; border-radius: inherit; display: block; }
+.img-remove {
+  position: absolute; top: -6px; right: -6px;
+  width: 20px; height: 20px; padding: 0;
+  border: none; border-radius: 50%;
+  background: var(--ink); color: #fff;
+  font-size: 14px; line-height: 20px; cursor: pointer;
+}
