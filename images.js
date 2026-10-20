@@ -76,6 +76,6 @@ function setupImage(o) {
 setupImage({ box: '.photo', key: 'mediakit:photo', type: 'image/png', fit: 'cover', label: 'a photo or logo' });
 
 // Brand logos: the same setup for each of the 3 boxes (i = 0, 1, 2)
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 6; i++) {
   setupImage({ box: '.mini-logo', index: i, key: 'mediakit:brand' + (i + 1), type: 'image/png', fit: 'cover', label: 'a brand logo' });
 }
