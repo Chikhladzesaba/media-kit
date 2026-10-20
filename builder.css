@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  max-width: calc(384px + 210mm);;
   margin: 0 auto 16px;
 }
 .topbar h1 { font-size: 28px; }
@@ -26,7 +26,7 @@
   justify-content: space-between;
   gap: 24px;
   align-items: start;
-  max-width: 1400px;
+  max-width: calc(384px + 210mm);;
   margin: 0 auto;
 }
 .app > * { min-width: 0; }
