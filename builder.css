@@ -111,3 +111,6 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .swatches input[type="color"] { width: 36px; height: 30px; padding: 0; margin: 0; border: 1px solid var(--border); border-radius: 8px; background: none; cursor: pointer; }
 .topbar h1 { font-family: 'Inter Tight', sans-serif; font-weight: 400; letter-spacing: -0.01em; }
 .topbar h1 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; letter-spacing: 0; }
+.layouts { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--border); border-radius: 999px; background: #fff; }
+.layouts button { padding: 8px 16px; margin: 0; border: 0; border-radius: 999px; background: none; color: var(--muted); font: inherit; font-size: 14px; cursor: pointer; }
+.layouts button.on { background: var(--ink); color: #fff; }
