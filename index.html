@@ -62,14 +62,19 @@
         <label>Women, % of viewers<input name="women" type="number" min="0" max="100"></label>
       </details>
 
-      <details>
+           <details>
         <summary>4. Past brands</summary>
+        <p class="note">Click a Logo box in the preview to add the brand's logo.</p>
         <div class="row">
-          <label>Brand 1<input name="b1"></label><label>Result<input name="b1res" placeholder="80K views"></label>
-          <label>Brand 2<input name="b2"></label><label>Result<input name="b2res" placeholder="2,400 clicks"></label>
-          <label>Brand 3<input name="b3"></label><label>Result<input name="b3res" placeholder="350 sign-ups"></label>
-            <p class="note">Click a Logo box in the preview to add the brand's logo.</p>
+          <label data-brand="1">Brand 1<input name="b1"></label><label data-brand="1">Result<input name="b1res" placeholder="80K views"></label>
+          <label data-brand="2">Brand 2<input name="b2"></label><label data-brand="2">Result<input name="b2res" placeholder="2,400 clicks"></label>
+          <label data-brand="3">Brand 3<input name="b3"></label><label data-brand="3">Result<input name="b3res" placeholder="350 sign-ups"></label>
+          <label data-brand="4">Brand 4<input name="b4"></label><label data-brand="4">Result<input name="b4res" placeholder="80K views"></label>
+          <label data-brand="5">Brand 5<input name="b5"></label><label data-brand="5">Result<input name="b5res" placeholder="2,400 clicks"></label>
+          <label data-brand="6">Brand 6<input name="b6"></label><label data-brand="6">Result<input name="b6res" placeholder="350 sign-ups"></label>
         </div>
+        <button type="button" id="add-brand">+ Add brand</button>
+        <button type="button" id="remove-brand">Remove last brand</button>
       </details>
 
       <details>
@@ -131,12 +136,15 @@
         </div>
       </section>
 
-      <section>
+        <section>
         <h2>Brands we've worked with</h2>
-        <div class="three">
-          <div class="card"><div class="mini-logo">Logo</div><b data-field="b1">Brand name</b><span data-field="b1res">Result: 00K views</span></div>
-          <div class="card"><div class="mini-logo">Logo</div><b data-field="b2">Brand name</b><span data-field="b2res">Result: 0,000 clicks</span></div>
-          <div class="card"><div class="mini-logo">Logo</div><b data-field="b3">Brand name</b><span data-field="b3res">Result: 000 sign-ups</span></div>
+        <div class="brands">
+          <div class="card" data-brand="1"><div class="mini-logo">Logo</div><b data-field="b1">Brand name</b><span data-field="b1res">Result: 00K views</span></div>
+          <div class="card" data-brand="2"><div class="mini-logo">Logo</div><b data-field="b2">Brand name</b><span data-field="b2res">Result: 0,000 clicks</span></div>
+          <div class="card" data-brand="3"><div class="mini-logo">Logo</div><b data-field="b3">Brand name</b><span data-field="b3res">Result: 000 sign-ups</span></div>
+          <div class="card" data-brand="4"><div class="mini-logo">Logo</div><b data-field="b4">Brand name</b><span data-field="b4res">Result: 00K views</span></div>
+          <div class="card" data-brand="5"><div class="mini-logo">Logo</div><b data-field="b5">Brand name</b><span data-field="b5res">Result: 0,000 clicks</span></div>
+          <div class="card" data-brand="6"><div class="mini-logo">Logo</div><b data-field="b6">Brand name</b><span data-field="b6res">Result: 000 sign-ups</span></div>
         </div>
       </section>
 
@@ -160,5 +168,6 @@
   <script src="form.js"></script>
   <script src="storage.js"></script>
   <script src="images.js"></script>
+  <script src="brands.js"></script>
 </body>
 </html>
