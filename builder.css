@@ -114,3 +114,8 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .layouts { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--border); border-radius: 999px; background: #fff; }
 .layouts button { padding: 8px 16px; margin: 0; border: 0; border-radius: 999px; background: none; color: var(--muted); font: inherit; font-size: 14px; cursor: pointer; }
 .layouts button.on { background: var(--ink); color: #fff; }
+.site-foot { max-width: calc(384px + 210mm); margin: 32px auto 0; padding-top: 16px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+.site-foot p { margin: 4px 0; }
+.site-foot a { color: var(--ink); text-underline-offset: 2px; }
+.site-foot a:hover { color: var(--accent); }
+@media print { .site-foot { display: none; } }
