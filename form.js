@@ -27,10 +27,6 @@ function update() {
     }
   });
 
-  // 2. Men % = 100 minus women %
-  const women = form.elements.women.value;
-  document.querySelector('#men').textContent = women === '' ? '00' : 100 - Number(women);
-
   // 3. Handles line: up to 4 rows of Platform + Handle, empty rows skipped
   const handles = [];
   for (let i = 1; i <= 4; i++) {
