@@ -64,7 +64,12 @@ section { margin-top: 28px; }
 .handles { margin: 0; font-size: 12px; color: var(--muted); }
 
 /* Audience numbers */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stats { display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 10px; }
+.stat { position: relative; }
+[data-stat][hidden] { display: none; }
+.stats.many .stat { padding: 10px; }
+.stats.many .stat b { font-size: 20px; }
+.stats.single .card-remove { display: none; }
 .stat {
   padding: 14px;
   background: var(--bg);
