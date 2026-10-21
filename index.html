@@ -12,10 +12,14 @@
   <link rel="stylesheet" href="builder.css">
 </head>
 <body>
- <h1>Media <em>Kit</em></h1>
-<p class="support">☕ Support this tool: <a href="#"><!-- KOFI -->Ko-fi</a> · <a href="#"><!-- KISA -->Kisa (₾)</a></p>f
+  <div class="topbar">
+    <h1>Media <em>Kit</em></h1>
+    <p class="support">☕ Support this tool: <a href="#"><!-- KOFI -->Ko-fi</a> · <a href="#"><!-- KISA -->Kisa (₾)</a></p>
+    <div class="actions">
+      <button type="button" id="reset">Clear all</button>
+      <button type="button" disabled>Download PDF (soon)</button>
+    </div>
   </div>
-
   <div class="app">
     <!-- LEFT: the form. Each input's name matches a data-field in the kit. -->
     <form id="form" class="form" autocomplete="off">
