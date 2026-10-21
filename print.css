@@ -1,0 +1,19 @@
+/* print.css — what the PDF looks like: only the kit, one A4 page */
+@page { size: A4; margin: 0; }
+
+@media print {
+  html, body { margin: 0; padding: 0; background: #fff; }
+
+  /* Hide everything that isn't the kit */
+  .topbar, .form, .site-foot, .img-remove, .card-remove, .print-hide { display: none !important; }
+
+  /* Undo the builder's two-column layout and phone zoom */
+  .app { display: block; max-width: none; margin: 0; }
+  .kit { width: 210mm; max-width: none; min-height: 297mm; margin: 0; box-shadow: none; zoom: 1 !important; }
+
+  /* Empty image boxes (just an upload icon) stay out of the PDF */
+  .photo:not(.has-image), .mini-logo:not(.has-image) { display: none; }
+
+  /* Keep each section together */
+  section, .card, .stat { break-inside: avoid; }
+}
