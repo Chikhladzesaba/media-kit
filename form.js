@@ -18,6 +18,7 @@ function update() {
     document.querySelectorAll(`[data-field="${input.name}"]`).forEach(el => {
             el.textContent = value || el.dataset.sample;
       if (el.hasAttribute('data-fade')) el.classList.toggle('is-sample', value === '');
+            if (el.hasAttribute('data-optional')) el.hidden = value === '';
     });
 
     if (value !== '') {
