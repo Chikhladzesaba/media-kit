@@ -69,13 +69,17 @@
 
       <details>
         <summary>3. Audience numbers</summary>
-                <p class="note">Four tiles: what each number means, and the number</p>
+         <p class="note">Each tile: what the number means, and the number</p>
         <div class="row">
-          <label>Tile 1 label<input name="lab1" placeholder="Instagram followers"></label><label>Number<input name="subs" placeholder="120K"></label>
-          <label>Tile 2 label<input name="lab2" placeholder="Avg. views per video"></label><label>Number<input name="avgviews" placeholder="45K"></label>
-          <label>Tile 3 label<input name="lab3" placeholder="Monthly views"></label><label>Number<input name="monthly" placeholder="1.2M"></label>
-          <label>Tile 4 label<input name="lab4" placeholder="Engagement rate"></label><label>Number<input name="engagement" placeholder="6.5%"></label>
+          <label data-stat="1">Tile 1 label<input name="lab1" placeholder="Instagram followers"></label><label data-stat="1">Number<input name="subs" placeholder="120K"></label>
+          <label data-stat="2">Tile 2 label<input name="lab2" placeholder="Avg. views per video"></label><label data-stat="2">Number<input name="avgviews" placeholder="45K"></label>
+          <label data-stat="3">Tile 3 label<input name="lab3" placeholder="Monthly views"></label><label data-stat="3">Number<input name="monthly" placeholder="1.2M"></label>
+          <label data-stat="4">Tile 4 label<input name="lab4" placeholder="Engagement rate"></label><label data-stat="4">Number<input name="engagement" placeholder="6.5%"></label>
+          <label data-stat="5">Tile 5 label<input name="lab5" placeholder="TikTok followers"></label><label data-stat="5">Number<input name="stat5" placeholder="80K"></label>
+          <label data-stat="6">Tile 6 label<input name="lab6" placeholder="Story views"></label><label data-stat="6">Number<input name="stat6" placeholder="15K"></label>
         </div>
+        <button type="button" id="add-stat">+ Add tile</button>
+        <button type="button" id="remove-stat">Remove last tile</button>
         <p class="note">Age split, % of viewers</p>
         <div class="row">
           <label>18–24<input name="age1" type="number" min="0" max="100"></label>
@@ -133,10 +137,12 @@
       <section>
         <h2>Audience</h2>
         <div class="stats">
-          <div class="stat"><b data-field="subs">000K</b><span data-field="lab1" data-fade>Subscribers</span></div>
-          <div class="stat"><b data-field="avgviews">00K</b><span data-field="lab2" data-fade>Avg. views per video</span></div>
-          <div class="stat"><b data-field="monthly">0.0M</b><span data-field="lab3" data-fade>Monthly views</span></div>
-          <div class="stat"><b data-field="engagement">0.0%</b><span data-field="lab4" data-fade>Engagement rate</span></div>
+          <div class="stat" data-stat="1"><b data-field="subs">000K</b><span data-field="lab1" data-fade>Subscribers</span></div>
+          <div class="stat" data-stat="2"><b data-field="avgviews">00K</b><span data-field="lab2" data-fade>Avg. views per video</span></div>
+          <div class="stat" data-stat="3"><b data-field="monthly">0.0M</b><span data-field="lab3" data-fade>Monthly views</span></div>
+          <div class="stat" data-stat="4"><b data-field="engagement">0.0%</b><span data-field="lab4" data-fade>Engagement rate</span></div>
+          <div class="stat" data-stat="5"><b data-field="stat5">00K</b><span data-field="lab5" data-fade>Story views</span></div>
+          <div class="stat" data-stat="6"><b data-field="stat6">00K</b><span data-field="lab6" data-fade>Saves per post</span></div>
         </div>
       </section>
 
@@ -201,6 +207,7 @@
   <script src="storage.js"></script>
   <script src="images.js"></script>
   <script src="brands.js"></script>
+    <script src="stats.js"></script>
   <script src="reset.js"></script>
   <script src="branding.js"></script>
 </body>
