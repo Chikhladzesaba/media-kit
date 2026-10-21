@@ -16,7 +16,8 @@ function update() {
     const value = input.value.trim();
 
     document.querySelectorAll(`[data-field="${input.name}"]`).forEach(el => {
-      el.textContent = value || el.dataset.sample;
+            el.textContent = value || el.dataset.sample;
+      if (el.hasAttribute('data-fade')) el.classList.toggle('is-sample', value === '');
     });
 
     if (value !== '') {
