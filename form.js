@@ -53,6 +53,13 @@ function update() {
 
 // Run update every time anything in the form changes
 form.addEventListener('input', update);
+// Number boxes: keep values between their min and max (e.g. 0–100 for %)
+form.addEventListener('input', (e) => {
+  const el = e.target;
+  if (el.type !== 'number' || el.value === '') return;
+  if (el.max !== '' && Number(el.value) > Number(el.max)) el.value = el.max;
+  if (el.min !== '' && Number(el.value) < Number(el.min)) el.value = el.min;
+});
 
 // Platform boxes: empty on click so the full suggestion list shows; put the old value back if nothing was chosen
 form.querySelectorAll('input[list]').forEach(input => {
