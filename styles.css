@@ -90,7 +90,7 @@ section { margin-top: 28px; }
 .bar b { text-align: right; font-weight: 600; }
 
 /* Countries */
-.countries { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.8; }
+.countries { margin: 0; padding-left: 18px; font-size: 12px; line-height: 2; }
 .countries b { float: right; }
 
 /* Gender split */
