@@ -130,3 +130,4 @@ input:focus { outline: 2px solid var(--accent); border-color: transparent; }
 .support a { color: var(--ink); text-decoration: none; }
 .support a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .site-foot .cta { color: var(--accent); font-weight: 600; text-decoration: none; }
+.intro { margin: 0 0 16px; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--ink); line-height: 1.5; }
