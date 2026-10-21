@@ -80,12 +80,15 @@
         </div>
         <button type="button" id="add-stat">+ Add tile</button>
         <button type="button" id="remove-stat">Remove last tile</button>
-        <p class="note">Age split, % of viewers</p>
+        <p class="note">Age, % of viewers (copy from YouTube Studio or Instagram; TikTok's 55+ goes in 55–64)</p>
         <div class="row">
-          <label>18–24<input name="age1" type="number" min="0" max="100"></label>
-          <label>25–34<input name="age2" type="number" min="0" max="100"></label>
-          <label>35–44<input name="age3" type="number" min="0" max="100"></label>
-          <label>45+<input name="age4" type="number" min="0" max="100"></label>
+          <label>13–17<input name="age0" type="number" min="0" max="100" step="0.1"></label>
+          <label>18–24<input name="age1" type="number" min="0" max="100" step="0.1"></label>
+          <label>25–34<input name="age2" type="number" min="0" max="100" step="0.1"></label>
+          <label>35–44<input name="age3" type="number" min="0" max="100" step="0.1"></label>
+          <label>45–54<input name="age4" type="number" min="0" max="100" step="0.1"></label>
+          <label>55–64<input name="age5" type="number" min="0" max="100" step="0.1"></label>
+          <label>65+<input name="age6" type="number" min="0" max="100" step="0.1"></label>
         </div>
         <p class="note">Top 3 countries</p>
         <div class="row">
@@ -151,10 +154,15 @@
         <div class="three">
           <div>
             <h3>Age</h3>
-            <div class="bar"><span>18–24</span><i data-width="age1" style="width:30%"></i></div>
-            <div class="bar"><span>25–34</span><i data-width="age2" style="width:45%"></i></div>
-            <div class="bar"><span>35–44</span><i data-width="age3" style="width:15%"></i></div>
-            <div class="bar"><span>45+</span><i data-width="age4" style="width:10%"></i></div>
+               <div class="ages">
+              <div class="bar" data-age="0"><span>13–17</span><i></i><b></b></div>
+              <div class="bar" data-age="1"><span>18–24</span><i></i><b></b></div>
+              <div class="bar" data-age="2"><span>25–34</span><i></i><b></b></div>
+              <div class="bar" data-age="3"><span>35–44</span><i></i><b></b></div>
+              <div class="bar" data-age="4"><span>45–54</span><i></i><b></b></div>
+              <div class="bar" data-age="5"><span>55–64</span><i></i><b></b></div>
+              <div class="bar" data-age="6"><span>65+</span><i></i><b></b></div>
+            </div>
           </div>
           <div>
             <h3>Top countries</h3>
@@ -208,6 +216,7 @@
   <script src="images.js"></script>
   <script src="brands.js"></script>
     <script src="stats.js"></script>
+    <script src="ages.js"></script>
   <script src="reset.js"></script>
   <script src="branding.js"></script>
 </body>
