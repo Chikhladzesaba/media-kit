@@ -69,11 +69,12 @@
 
       <details>
         <summary>3. Audience numbers</summary>
+                <p class="note">Four tiles: what each number means, and the number</p>
         <div class="row">
-          <label>Subscribers<input name="subs" placeholder="120K"></label>
-          <label>Avg. views per video<input name="avgviews" placeholder="45K"></label>
-          <label>Monthly views<input name="monthly" placeholder="1.2M"></label>
-          <label>Engagement rate<input name="engagement" placeholder="6.5%"></label>
+          <label>Tile 1 label<input name="lab1" placeholder="Instagram followers"></label><label>Number<input name="subs" placeholder="120K"></label>
+          <label>Tile 2 label<input name="lab2" placeholder="Avg. views per video"></label><label>Number<input name="avgviews" placeholder="45K"></label>
+          <label>Tile 3 label<input name="lab3" placeholder="Monthly views"></label><label>Number<input name="monthly" placeholder="1.2M"></label>
+          <label>Tile 4 label<input name="lab4" placeholder="Engagement rate"></label><label>Number<input name="engagement" placeholder="6.5%"></label>
         </div>
         <p class="note">Age split, % of viewers</p>
         <div class="row">
@@ -132,10 +133,10 @@
       <section>
         <h2>Audience</h2>
         <div class="stats">
-          <div class="stat"><b data-field="subs">000K</b><span>Subscribers</span></div>
-          <div class="stat"><b data-field="avgviews">00K</b><span>Avg. views per video</span></div>
-          <div class="stat"><b data-field="monthly">0.0M</b><span>Monthly views</span></div>
-          <div class="stat"><b data-field="engagement">0.0%</b><span>Engagement rate</span></div>
+          <div class="stat"><b data-field="subs">000K</b><span data-field="lab1" data-fade>Subscribers</span></div>
+          <div class="stat"><b data-field="avgviews">00K</b><span data-field="lab2" data-fade>Avg. views per video</span></div>
+          <div class="stat"><b data-field="monthly">0.0M</b><span data-field="lab3" data-fade>Monthly views</span></div>
+          <div class="stat"><b data-field="engagement">0.0%</b><span data-field="lab4" data-fade>Engagement rate</span></div>
         </div>
       </section>
 
