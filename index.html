@@ -29,6 +29,7 @@
         <summary>1. Profile</summary>
         <label>Channel name<input name="name" placeholder="Your Channel Name"></label>
         <label>One-sentence description<input name="tagline" placeholder="What your channel is about"></label>
+                <label>Small label above your name<input name="eyebrow" value="Media kit"></label>
                <div class="row">
           <label>Platform<input name="plat1" list="platforms" value="YouTube"></label>
           <label>Handle<input name="handle1" placeholder="@yourchannel"></label>
@@ -46,6 +47,7 @@
         </datalist>
         <label>Contact email<input name="email" type="email" placeholder="you@example.com"></label>
         <label>Phone<input name="phone" placeholder="+995 ..."></label>
+                <label>Contact box title<input name="ctatitle" value="Let's work together"></label>
         <label>Numbers updated (month)<input name="updated" placeholder="October 2026"></label>
       </details>
 
@@ -150,7 +152,7 @@
       <header class="kit-head">
         <div class="photo">Photo</div>
         <div class="head-text">
-          <p class="eyebrow">Media kit</p>
+           <p class="eyebrow" data-field="eyebrow" data-optional>Media kit</p>
           <h1 data-field="name">Your Channel Name</h1>
           <p class="tagline" data-field="tagline">One sentence about what your channel is and who watches it.</p>
           <p class="handles" id="handles">YouTube @yourchannel · Instagram @yourchannel · TikTok @yourchannel</p>
@@ -227,7 +229,7 @@
       </section>
 
       <footer class="kit-foot">
-        <h2>Let's work together</h2>
+        <h2 data-field="ctatitle" data-optional>Let's work together</h2>
          <p id="contact"></p>
         <p class="updated">Numbers updated <span data-field="updated">[month]</span></p>
       </footer>
