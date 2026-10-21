@@ -122,12 +122,25 @@
 
       <details>
         <summary>5. Packages & prices</summary>
-        <label>Dedicated video: price<input name="p1price" placeholder="$1,500"></label>
-        <label>What's included<input name="p1inc"></label>
-        <label>Integration (60–90 sec): price<input name="p2price" placeholder="$600"></label>
-        <label>What's included<input name="p2inc"></label>
-        <label>Short-form: price<input name="p3price" placeholder="$300"></label>
-        <label>What's included<input name="p3inc"></label>
+               <p class="note">Name each package, then its price and what's included</p>
+        <div data-package="1">
+          <div class="row"><label>Package 1<input name="p1name" placeholder="Dedicated video"></label><label>Price<input name="p1price" placeholder="$1,500"></label></div>
+          <label>What's included<input name="p1inc" placeholder="One full video about your product"></label>
+        </div>
+        <div data-package="2">
+          <div class="row"><label>Package 2<input name="p2name" placeholder="Integration (60–90 sec)"></label><label>Price<input name="p2price" placeholder="$600"></label></div>
+          <label>What's included<input name="p2inc" placeholder="A segment inside a regular video"></label>
+        </div>
+        <div data-package="3">
+          <div class="row"><label>Package 3<input name="p3name" placeholder="Short-form"></label><label>Price<input name="p3price" placeholder="$300"></label></div>
+          <label>What's included<input name="p3inc" placeholder="One Short, Reel or TikTok"></label>
+        </div>
+        <div data-package="4">
+          <div class="row"><label>Package 4<input name="p4name" placeholder="Story set"></label><label>Price<input name="p4price" placeholder="$200"></label></div>
+          <label>What's included<input name="p4inc" placeholder="3 Instagram stories with a link"></label>
+        </div>
+        <button type="button" id="add-package">+ Add package</button>
+        <button type="button" id="remove-package">Remove last package</button>
       </details>
     </form>
 
@@ -204,10 +217,11 @@
 
       <section>
         <h2>Packages</h2>
-        <div class="three">
-          <div class="card package"><b>Dedicated video</b><p class="price" data-field="p1price">$0,000</p><span data-field="p1inc">What's included goes here.</span></div>
-          <div class="card package"><b>Integration (60–90 sec)</b><p class="price" data-field="p2price">$000</p><span data-field="p2inc">What's included goes here.</span></div>
-          <div class="card package"><b>Short-form</b><p class="price" data-field="p3price">$000</p><span data-field="p3inc">What's included goes here.</span></div>
+               <div class="packages">
+          <div class="card package" data-package="1"><b data-field="p1name" data-fade>Dedicated video</b><p class="price" data-field="p1price">$0,000</p><span data-field="p1inc">What's included goes here.</span></div>
+          <div class="card package" data-package="2"><b data-field="p2name" data-fade>Integration (60–90 sec)</b><p class="price" data-field="p2price">$000</p><span data-field="p2inc">What's included goes here.</span></div>
+          <div class="card package" data-package="3"><b data-field="p3name" data-fade>Short-form</b><p class="price" data-field="p3price">$000</p><span data-field="p3inc">What's included goes here.</span></div>
+          <div class="card package" data-package="4"><b data-field="p4name" data-fade>Story set</b><p class="price" data-field="p4price">$000</p><span data-field="p4inc">What's included goes here.</span></div>
         </div>
       </section>
 
@@ -229,6 +243,7 @@
     <script src="ages.js"></script>
     <script src="countries.js"></script>
     <script src="gender.js"></script>
+    <script src="packages.js"></script>
   <script src="reset.js"></script>
   <script src="branding.js"></script>
 </body>
