@@ -93,11 +93,6 @@ section { margin-top: 28px; }
 .countries { margin: 0; padding-left: 18px; font-size: 12px; line-height: 2; }
 .countries b { float: right; }
 
-/* Gender split */
-.split { height: 10px; background: var(--border); border-radius: 5px; overflow: hidden; }
-.split i { display: block; height: 100%; background: var(--accent); }
-.split-label { display: flex; justify-content: space-between; margin: 6px 0 0; font-size: 12px; color: var(--muted); }
-
 /* Cards: brands and packages */
 .card {
   display: flex;
@@ -111,6 +106,10 @@ section { margin-top: 28px; }
 .card span { color: var(--muted); }
 .mini-logo { width: 40px; height: 40px; border-radius: 8px; }
 .package { background: var(--bg); }
+.packages { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 14px; }
+[data-package][hidden] { display: none; }
+.packages.single .card-remove { display: none; }
+@media (max-width: 640px) { .packages { grid-template-columns: 1fr; } }
 .price { margin: 0; font-size: 22px; font-weight: 700; color: var(--accent); }
 
 /* Footer */
