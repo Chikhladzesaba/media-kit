@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="builder.css">
+    <link rel="stylesheet" href="print.css">
 </head>
 <body>
   <div class="topbar">
@@ -22,14 +23,13 @@
     <p class="support">☕ Support this tool: <a href="#"><!-- KOFI -->Ko-fi</a> · <a href="#"><!-- KISA -->Kisa (₾)</a></p>
     <div class="actions">
       <button type="button" id="reset">Clear all</button>
-      <button type="button" disabled>Download PDF (soon)</button>
-    </div>
+      <button type="button" id="download-pdf">Download PDF</button>    </div>
   </div>
   <div class="app">
     <!-- LEFT: the form. Each input's name matches a data-field in the kit. -->
     <form id="form" class="form" autocomplete="off">
 
-     <p class="intro">Fill in the steps below and your kit builds live on the right. Click the photo and logo boxes in the kit to add images.</p> 
+     <p class="intro">Fill in the steps below and your kit builds live on the right. Click the photo and logo boxes in the kit to add images. When it looks right, click Download PDF and choose "Save as PDF".</p></p> 
       <details>
         <summary>1. Profile</summary>
         <label>Channel name<input name="name" placeholder="Your Channel Name"></label>
@@ -252,6 +252,7 @@
     <script src="countries.js"></script>
     <script src="gender.js"></script>
     <script src="packages.js"></script>
+    <script src="download.js"></script>
   <script src="reset.js"></script>
   <script src="branding.js"></script>
 </body>
