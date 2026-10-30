@@ -1,7 +1,5 @@
 # Media Kit
 
-![Media Kit — one-page media kit for creators](share.png)
-
 A free one-page media kit and rate card for creators to send to sponsors.
 No sign-up · Your data stays with you.
 
